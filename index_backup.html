@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAURAV DENTAL CLINIC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #0066ff;
+            --accent-color: #7c3aed;
+            --dark-color: #0a0e27;
+            --light-color: #f0f7ff;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --success: #10b981;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+            --gradient-3: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: hidden;
+            background: var(--dark-color);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Simple Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        /* Header with Glass Morphism */
+        header {
+            background: rgba(10, 14, 39, 0.98);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--gradient-2);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .call-btn {
+            background: var(--gradient-2);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .call-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .call-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 4px 0;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-8px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-8px, -6px);
+        }
+
+        /* Hero Section with 3D Effects */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 90px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9), rgba(26, 31, 58, 0.8));
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1920&q=80') center/cover;
+            filter: brightness(0.3);
+        }
+
+        .hero-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.2;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-2);
+            top: -100px;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 250px;
+            height: 250px;
+            background: var(--gradient-1);
+            bottom: -80px;
+            right: -80px;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1.5rem;
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 1.5s ease-out 0.6s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.5s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Section Styles with Parallax */
+        section {
+            padding: 6rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--gradient-2);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            font-weight: 400;
+        }
+
+        /* About Section with 3D Card */
+        .about {
+            background: rgba(10, 14, 39, 0.5);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/></pattern></defs><rect fill="url(%23grid)" width="1200" height="600"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1629909615957-be38f89d8e18?w=800&q=80') center/cover;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .about-image:hover {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .about-image:hover::before {
+            left: 100%;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,102,204,0.3), rgba(0,168,255,0.2));
+            border-radius: 30px;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .about-text p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.8rem;
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 212, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-item {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Doctors Section with 3D Cards */
+        .doctors {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.9));
+            position: relative;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            perspective: 1000px;
+        }
+
+        .doctor-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(102, 126, 234, 0.05));
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 15px 60px rgba(0, 212, 255, 0.2);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-2);
+            opacity: 0;
+            transition: opacity 0.6s;
+            z-index: 0;
+        }
+
+        .doctor-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .doctor-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 25px 80px rgba(0, 212, 255, 0.4);
+        }
+
+        .doctor-photo {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+            border: 6px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-card h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+
+        .doctor-card .qualification {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .doctor-card .experience {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Services Section with Advanced Animations */
+        .services {
+            background: rgba(10, 14, 39, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent);
+            top: -300px;
+            right: -300px;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(102, 126, 234, 0.05));
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+            background: var(--gradient-2);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        @media (hover: none) {
+            .service-card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s;
+            filter: drop-shadow(0 5px 15px rgba(0, 212, 255, 0.3));
+            display: inline-block;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15);
+            filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.4));
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.8);
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover p {
+            opacity: 1;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(10, 14, 39, 0.8));
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(102, 126, 234, 0.08));
+            padding: 2.5rem 1.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .highlight-card:hover::after {
+            opacity: 1;
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(102, 126, 234, 0.15));
+        }
+
+        .highlight-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            filter: drop-shadow(0 5px 15px rgba(0, 212, 255, 0.4));
+            transition: all 0.4s;
+            display: inline-block;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            transform: scale(1.2) rotateZ(10deg);
+            filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.8));
+        }
+
+        .highlight-card h3 {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Appointment Form with Glassmorphism */
+        .appointment {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(124, 58, 237, 0.15));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent);
+            top: -250px;
+            left: -250px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .appointment::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3), transparent);
+            bottom: -200px;
+            right: -200px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .appointment .section-title h2,
+        .appointment .section-title p {
+            color: white;
+        }
+
+        .appointment .section-title h2::after {
+            background: white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .appointment-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 25px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s;
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group textarea {
+            border-radius: 25px;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--dark-color);
+            color: white;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 60px rgba(0, 212, 255, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Map Section */
+        .map {
+            background: rgba(10, 14, 39, 0.7);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            border: 3px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.5s;
+        }
+
+        .map-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 80px rgba(0, 212, 255, 0.5);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Gallery Section with Image Grid */
+        .gallery {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.9));
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0,102,204,0.3), rgba(0,168,255,0.3));
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,102,204,0.7), rgba(0,168,255,0.6));
+            transition: opacity 0.5s;
+            z-index: 0;
+        }
+
+        .gallery-item span {
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 212, 255, 0.5);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 0.4;
+        }
+
+        .gallery-item:nth-child(1) {
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80');
+        }
+
+        .gallery-item:nth-child(2) {
+            background-image: url('https://images.unsplash.com/photo-1629909615957-be38f89d8e18?w=600&q=80');
+        }
+
+        .gallery-item:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=80');
+        }
+
+        .gallery-item:nth-child(4) {
+            background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80');
+        }
+
+        .gallery-item:nth-child(5) {
+            background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80');
+        }
+
+        .gallery-item:nth-child(6) {
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80');
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            color: white;
+            padding: 4rem 5%;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+            font-size: 1.5rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--gradient-2);
+            border-color: var(--primary-color);
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        /* Animations for scroll effects */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Mobile Touch Optimization */
+        @media (max-width: 768px) {
+            /* Ensure all interactive elements meet 44px minimum touch target */
+            .nav-links a,
+            .btn,
+            .call-btn,
+            .submit-btn,
+            .social-icons a,
+            .scroll-top {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Prevent text selection on buttons */
+            .btn,
+            .call-btn,
+            .submit-btn {
+                -webkit-tap-highlight-color: transparent;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            /* Improve form inputs for mobile */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents iOS zoom on focus */
+            }
+
+            /* Make cards more touch-friendly */
+            .service-card,
+            .doctor-card,
+            .highlight-card,
+            .gallery-item {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(0, 212, 255, 0.2);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(10, 14, 39, 0.98);
+                width: 100%;
+                padding: 2rem 1.5rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+                transition: left 0.3s ease;
+                gap: 0.5rem;
+                border-bottom: 2px solid rgba(0, 212, 255, 0.5);
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 1rem 0.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                margin-top: 80px;
+                padding: 3rem 1.25rem;
+                min-height: 80vh;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+
+            .hero-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                line-height: 1.6;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 16px 30px;
+                font-size: 0.95rem;
+            }
+
+            .appointment-form {
+                padding: 2rem 1.25rem;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text p {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            section {
+                padding: 3rem 1.25rem;
+            }
+
+            .service-card,
+            .highlight-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .service-icon {
+                font-size: 3rem;
+            }
+
+            .doctor-photo {
+                width: 140px;
+                height: 140px;
+                font-size: 3rem;
+            }
+
+            .doctor-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .scroll-top {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 15px;
+            }
+
+            .gallery-item {
+                height: 220px;
+                font-size: 1.2rem;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .call-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.85rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.75rem;
+            }
+
+            .section-title p {
+                font-size: 0.9rem;
+            }
+
+            .doctors-grid,
+            .services-grid,
+            .highlights-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .call-btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                padding: 14px 25px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .service-card h3,
+            .highlight-card h3 {
+                font-size: 1.05rem;
+            }
+
+            .doctor-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                padding: 16px;
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Background -->
+    <div class="particles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="Gaurav Dental Clinic Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size: 2.5rem;\'>🦷</div>'">
+                </div>
+                <div class="logo-text">
+                    <h1>GAURAV DENTAL CLINIC</h1>
+                    <p>Perfect Smile Begins Here</p>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:+919960272844" class="call-btn">📞 Call Now</a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Welcome to Gaurav Dental Clinic</p>
+            <h2>Your Perfect Smile<br>Begins Here</h2>
+            <p>Experience world-class dental care with advanced technology, modern equipment and compassionate professionals in Jalkot, Maharashtra</p>
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn btn-primary">📅 Book Appointment</a>
+                <a href="tel:+919960272844" class="btn btn-secondary">📞 Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section fade-in" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(124, 58, 237, 0.1)); padding: 4rem 5%; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+            <div style="color: white;">
+                <div style="font-size: 3rem; font-weight: 900; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">5+</div>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; font-weight: 600;">Years Experience</p>
+            </div>
+            <div style="color: white;">
+                <div style="font-size: 3rem; font-weight: 900; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">5000+</div>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; font-weight: 600;">Happy Patients</p>
+            </div>
+            <div style="color: white;">
+                <div style="font-size: 3rem; font-weight: 900; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">2</div>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; font-weight: 600;">Expert Dentists</p>
+            </div>
+            <div style="color: white;">
+                <div style="font-size: 3rem; font-weight: 900; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">100%</div>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; font-weight: 600;">Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Excellence in Dental Care</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">🏥</div>
+            <div class="about-text">
+                <h3>Welcome to GAURAV DENTAL CLINIC</h3>
+                <p>At Gaurav Dental Clinic, we are committed to providing exceptional dental care in a comfortable and friendly environment. Our state-of-the-art facility is equipped with the latest dental technology to ensure you receive the best treatment possible.</p>
+                <p>With years of experience and a passion for creating beautiful smiles, our dedicated team of professionals is here to serve you and your family's dental needs.</p>
+                <div class="about-features">
+                    <div class="feature-item">Modern Equipment</div>
+                    <div class="feature-item">Experienced Team</div>
+                    <div class="feature-item">Painless Procedures</div>
+                    <div class="feature-item">Affordable Prices</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors fade-in" id="doctors">
+        <div class="section-title">
+            <h2>Our Expert Doctors</h2>
+            <p>Experienced Professionals You Can Trust</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-photo">👨‍⚕️</div>
+                <h3>Dr. Pankaj Shindalkar</h3>
+                <p class="qualification">BDS</p>
+                <p class="experience">5 Years of Experience</p>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-photo">👩‍⚕️</div>
+                <h3>Dr. Renuka Shindalkar (Thote)</h3>
+                <p class="qualification">BDS</p>
+                <p class="experience">5 Years of Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services fade-in" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive Dental Solutions</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🦷</div>
+                <h3>Root Canal Treatment</h3>
+                <p>Advanced RCT procedures</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚕️</div>
+                <h3>Dental Implants</h3>
+                <p>Permanent tooth replacement</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">😁</div>
+                <h3>Braces / Aligners</h3>
+                <p>Straighten your smile</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Teeth Cleaning</h3>
+                <p>Professional oral hygiene</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💎</div>
+                <h3>Teeth Whitening</h3>
+                <p>Brighten your smile</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Extraction</h3>
+                <p>Painless tooth removal</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌟</div>
+                <h3>Smile Designing</h3>
+                <p>Complete smile makeover</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Child Dentistry</h3>
+                <p>Pediatric dental care</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👑</div>
+                <h3>Crowns & Bridges</h3>
+                <p>Restore your teeth</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>Gum Treatment</h3>
+                <p>Periodontal care</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦴</div>
+                <h3>Dentures</h3>
+                <p>Complete denture solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="highlights fade-in">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+            <p>Your Smile, Our Priority</p>
+        </div>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">💉</div>
+                <h3>Painless Treatment</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">💰</div>
+                <h3>Affordable Pricing</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🔬</div>
+                <h3>Advanced Equipment</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">👨‍⚕️</div>
+                <h3>Experienced Doctors</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🧼</div>
+                <h3>Hygienic Clinic</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🚨</div>
+                <h3>Emergency Care</h3>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">📅</div>
+                <h3>Same-day Appointments</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Form -->
+    <section class="appointment fade-in" id="appointment">
+        <div class="section-title">
+            <h2>Book an Appointment</h2>
+            <p>We're here to help you achieve your perfect smile</p>
+        </div>
+        <form class="appointment-form" id="appointmentForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="service">Select Service *</label>
+                <select id="service" name="service" required>
+                    <option value="">Choose a service</option>
+                    <option value="Root Canal Treatment">Root Canal Treatment (RCT)</option>
+                    <option value="Dental Implants">Dental Implants</option>
+                    <option value="Braces / Aligners">Braces / Aligners</option>
+                    <option value="Teeth Cleaning">Teeth Cleaning</option>
+                    <option value="Teeth Whitening">Teeth Whitening</option>
+                    <option value="Extraction">Extraction</option>
+                    <option value="Smile Designing">Smile Designing</option>
+                    <option value="Child Dentistry">Child Dentistry</option>
+                    <option value="Crowns & Bridges">Crowns & Bridges</option>
+                    <option value="Gum Treatment">Gum Treatment</option>
+                    <option value="Dentures">Dentures</option>
+                    <option value="General Consultation">General Consultation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Book Appointment via WhatsApp</button>
+        </form>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery fade-in">
+        <div class="section-title">
+            <h2>Our Clinic Gallery</h2>
+            <p>Take a Look at Our Facility</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><span>Reception Area</span></div>
+            <div class="gallery-item"><span>Treatment Room</span></div>
+            <div class="gallery-item"><span>Advanced Equipment</span></div>
+            <div class="gallery-item"><span>Consultation Room</span></div>
+            <div class="gallery-item"><span>Sterilization Unit</span></div>
+            <div class="gallery-item"><span>Patient Care</span></div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map fade-in" id="contact">
+        <div class="section-title">
+            <h2>Visit Us</h2>
+            <p>We're conveniently located to serve you</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.0867644936!2d77.17554757516893!3d18.630235782476436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfb30042a266af%3A0xde488712fcb771db!2sGaurav%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1732456789012!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; color: rgba(255,255,255,0.8);">
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong style="color: var(--primary-color);">📍 Address:</strong> Opposite of Rukmini Hospital, near Jamb Point, Jalkot, Maharashtra 413532</p>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.6);"><a href="https://www.google.com/maps/place/Gaurav+Dental+Clinic/@18.6302357,77.1777344,15z/data=!4m6!3m5!1s0x3bcfb30042a266af:0xde488712fcb771db!8m2!3d18.630145!4d77.1778275!16s%2Fg%2F11w49hks8z" target="_blank" style="color: var(--primary-color); text-decoration: underline;">📍 Open in Google Maps</a> | <a href="https://www.google.com/maps/dir//Gaurav+Dental+Clinic/@18.630145,77.1778275" target="_blank" style="color: var(--primary-color); text-decoration: underline;">🧭 Get Directions</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GAURAV DENTAL CLINIC</h3>
+                <p>Your Perfect Smile Begins Here</p>
+                <p>📍 Opposite of Rukmini Hospital, near Jamb Point, Jalkot, Maharashtra 413532</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>All Days: 9:00 AM - 6:00 PM</p>
+                <p><br></p>
+                <p>Emergency services available</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 <a href="tel:+919960272844">+91 9960272844</a></p>
+                <p>💬 <a href="https://wa.me/919960272844">WhatsApp Us</a></p>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GAURAV DENTAL CLINIC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 90;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Advanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Parallax disabled for mobile performance
+
+        // Particles removed for better mobile performance
+
+        // Cursor trail effect disabled for performance
+
+        // Scroll to top button
+        const scrollTopBtn = document.createElement('div');
+        scrollTopBtn.className = 'scroll-top';
+        scrollTopBtn.innerHTML = '↑';
+        document.body.appendChild(scrollTopBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Appointment Form WhatsApp Redirect
+        const appointmentForm = document.getElementById('appointmentForm');
+        
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            let whatsappMessage = `Hello, I want to book an appointment at GAURAV DENTAL CLINIC.\n\n`;
+            whatsappMessage += `Name: ${name}\n`;
+            whatsappMessage += `Phone: ${phone}\n`;
+            whatsappMessage += `Service: ${service}\n`;
+            if (message) {
+                whatsappMessage += `Message: ${message}`;
+            }
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/919960272844?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form with animation
+            appointmentForm.reset();
+            
+            // Show success feedback
+            const submitBtn = appointmentForm.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '✓ Message Sent!';
+            submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        });
+
+        // Add stagger animation to cards
+        function staggerAnimation(selector, delay = 100) {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * delay}ms`;
+            });
+        }
+
+        staggerAnimation('.service-card', 80);
+        staggerAnimation('.doctor-card', 150);
+        staggerAnimation('.highlight-card', 60);
+        staggerAnimation('.gallery-item', 100);
+
+        // Subtle hover effect (desktop only)
+        if (window.innerWidth > 768) {
+            const cards = document.querySelectorAll('.doctor-card, .service-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = 'transform 0.3s ease';
+                });
+            });
+        }
+
+        // Typing effect disabled for performance
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Form input animations
+        const formInputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Stats counter animation (can be added to about section)
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.ceil(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            
+            updateCounter();
+        }
+
+        // Image lazy loading with fade-in effect
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('fade-in');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+
+        console.log('%c GAURAV DENTAL CLINIC ', 'background: linear-gradient(135deg, #00d4ff, #0066ff); color: white; font-size: 20px; padding: 10px; border-radius: 5px;');
+        console.log('%c Website designed with advanced animations and 3D effects ', 'color: #00d4ff; font-size: 12px;');
+    </script>
+</body>
+</html>
